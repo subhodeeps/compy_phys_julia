@@ -10,7 +10,6 @@ as = range(amin, amax, length=8000)
 itmax = 5000 # number of iterations for each a 
 ihide = 1000 # number of hidden iterations before plotting
 xtiny = 1e-10 # initial value for x
-xnum = [] # number of x values per a value
 xmin, xmax = 0, 1
 nbins = 2000
 xs = range(xmin, xmax, length=nbins)
@@ -28,8 +27,10 @@ for a in eachindex(as)
     data[:, a] = data[:, a] / maximum(data[:, a])
 end
 
-p = heatmap(as, xs, data, c=cgrad(:ice, rev=true),
-    legend=false, grid=false, framestyle=:box)
+# p = heatmap(as, xs, data, c=cgrad(:ice, rev=true),
+#     legend=false, grid=false, framestyle=:box)
+p = heatmap(as, xs, data,c=cgrad(:grays, rev=true),
+colorbar = false, grid=false)
 xlabel!("\$\\alpha\$") # instead of the L marco
 ylabel!(L"x_{n}")
 title!(L"x_{n}=\alpha x_{n-1}(1-x_{n-1})");
