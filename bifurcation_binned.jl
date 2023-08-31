@@ -42,6 +42,7 @@ data ./= maximum(data, dims=1)
 
 # plotting 
 
+xmin, xmax = 0, 1 # range of x axis
 xs = range(xmin, xmax, length=nbins)
 
 p = heatmap(as, xs, data, c=cgrad(:grays, rev=true),
