@@ -30,7 +30,7 @@ end
 amin, amax, a_N = 2.8, 4.0, 8000 # limits of the x axis and number of points
 as = range(amin, amax, a_N) # range of a (x axis)
 itmax = 5000 # number of iterations for each a 
-ithide = 0 # number of hidden iterations before plotting
+ithide = 1000 # number of hidden iterations before plotting
 xtiny = 1e-10 # initial value for x
 nbins = 2000 # resolution along the y axis
 data = zeros(nbins, a_N) # array to store the computed data
