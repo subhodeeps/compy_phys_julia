@@ -8,7 +8,7 @@ end
 function compute_data!(data, as, xtiny, ithide, itmax, nbins)
     for (a_idx, a) in enumerate(as)
         x = xtiny
-        for i = 1:(ihide+itmax)
+        for i = 1:(ithide+itmax)
             x = logistic(a, x)
             if i > ihide
                 index = ceil(Int, nbins * x)
